@@ -1,0 +1,6 @@
+numpy>=1.19
+sympy>=1.9
+flask_restful
+pdoc
+symcad@git+https://github.com/symbench/SymCAD
+constraint-prog@git+https://github.com/symbench/constraint-prog

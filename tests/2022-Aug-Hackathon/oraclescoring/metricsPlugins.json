@@ -1,0 +1,86 @@
+{
+    "header" : "This file contains the list of metrics and their weights for assessing UUV design.  Add metrics for: distance travelled, position accuracy at waypoints, number waypoints traversed, mission completed (boolean), Total PV internalVolume/mass ratio",
+    "metrics" :
+    [
+	{
+	    "name" : "oceanBuoyancy",
+	    "description" : "UUV buoyancy should be in the range of ocean water, 1028-1048kg/m^3, to be able to float somewhere in the water column.  Initial buoyancy should be just above 1028 to make sure the vehicle can float immediately after launch.",
+	    "pythonFile" : "oceanBuoyancy",
+	    "weight" : 5
+	},
+	{
+	    "name" : "mass",
+	    "description" : "Mass is an open-ended metric, but smaller is better.  Using an S curve function to compute score, centered on 2000kg. ",
+	    "pythonFile" : "mass",
+	    "weight" : 6
+	},
+	{
+	    "name" : "volume",
+	    "description" : "Volume is an open-ended metric, but smaller is better.  Using an S curve function to compute score, centered on 4m^3. ",
+	    "pythonFile" : "volume",
+	    "weight" : 8
+	},
+	{
+	    "name" : "cbcg_over",
+	    "description" : "Neutral CB should be above CG. Pass/Fail",
+	    "pythonFile" : "cbcg_over",
+	    "weight" : 5
+	},
+	{
+	    "name" : "pitchRange",
+	    "description" : "Using CB/CG values for setting of pitch mass or buoyancy engine, calculates the maximum pitch achievable.  Score split between pitch up and pitch down.",
+	    "pythonFile" : "pitchRange",
+	    "weight" : 5
+	},
+	{
+	    "name" : "mission2.1_deploymentAccuracy",
+	    "description" : "Deployment should be within 300m.  Top score if within 100m",
+	    "pythonFile" : "deploymentAccuracy21",
+	    "weight" : 5
+	},
+	{
+	    "name" : "mission2.1_duration",
+	    "description" : "Mission duration should be 60 days. ",
+	    "pythonFile" : "mission21Duration",
+	    "weight" : 10
+	},
+	{
+	    "name" : "mission2.1_complete",
+	    "description" : "Mission 2.1 - Island OBS Deployment completed successfully.  Pass/Fail.",
+	    "pythonFile" : "mission21Completed",
+	    "weight" : 10
+	},
+	{
+	    "name" : "mission2.1_pathValid",
+	    "description" : "A valid path was taken by the UUV during the mission.  See warnings in the summary.csv if false.  Pass/Fail.",
+	    "pythonFile" : "mission21PathValid",
+	    "weight" : 5
+	},
+	{
+	    "name" : "pvDepthRating",
+	    "description" : "Depth rating of all pressure vessels should be above the target value, in meters.  0 score if below target.",
+	    "pythonFile" : "pvDepthRating",
+	    "targetValue" : 4000,
+	    "weight" : 5
+	},
+	{
+	    "name" : "Mission2.1 Energy Reserve",
+	    "description" : "Energy reserve left at the end of the mission, as a percentage of total energy capacity.  Target value 20%, to account for affects of load and temperature, plus a 0% mission reserve, scored on a bell curve.",
+	    "pythonFile" : "mission21EnergyReserve",
+	    "weight" : 6
+	},
+	{
+	    "name" : "Mission2.1 Waypoints Hit",
+	    "description" : "Number of specified mission waypoints that are traversed by the UUV.",
+	    "pythonFile" : "mission21Waypoints",
+	    "targetValue" : 125,
+	    "weight" : 10
+	},
+	{
+	    "name" : "PV-InternalVolumeToMassRatio",
+	    "description" : "PV-internal volume to mass ratio, across all PVs in the UUV.  Larger is better at a given depth rating.  Volume is converted to liters for in the metric",
+	    "pythonFile" : "pvVm",
+	    "weight" : 5
+	}
+    ]
+}

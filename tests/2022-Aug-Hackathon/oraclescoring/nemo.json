@@ -1,0 +1,118 @@
+{
+    "uuv" :
+    {
+	"mass" : 3000,
+	"displacement" : 3,
+	"volume" : 6.56,
+	"zeroPitch":
+	{
+	    "centerBuoyancy" :
+	    {
+		"x" : 5,
+		"y" : 0,
+		"z" : -0.3
+	    },
+	    "centerGravity" :
+	    {
+		"x" : 5,
+		"y" : 0,
+		"z" : -0.5
+	    }
+	},
+	"downPitch":
+	{
+	    "centerBuoyancy" :
+	    {
+		"x" : 4,
+		"y" : 0,
+		"z" : -0.3
+	    },
+	    "centerGravity" :
+	    {
+		"x" : 5,
+		"y" : 0,
+		"z" : -0.5
+	    }
+	},
+	"upPitch":
+	{
+	    "centerBuoyancy" :
+	    {
+		"x" : 6,
+		"y" : 0,
+		"z" : -0.3
+	    },
+	    "centerGravity" :
+	    {
+		"x" : 5,
+		"y" : 0,
+		"z" : -0.5
+	    }
+	},
+	"phase1Demo" :
+	{
+	    "guidance" : "fileVehicle.py",
+	    "outputCsvFile" : "C:/Users/gea0662/work/ndc/ta1DesignSubmissions/Siemens/simulation/data/example_output/output_stats.csv"
+	},
+	"mission2.1" :
+	{
+	    "guidance" : "../../mission2.1/simulator/STRControlTeam/controlUUV.py",
+	    "outputCsvFile" : "../../mission2.1/simulator/summary.csv"
+	},
+	"hullFairing" :
+	{
+	    "boundingBox" :
+	    {
+		"x" : 10,
+		"y" : 2,
+		"z" : 2
+	    },
+	    "stlFile" : "enterprise.stl"
+	},
+	"pressureVessels" :
+	[
+	    {
+		"name": "PV1",
+		"shape": "CYLINDER",
+		"internalRadius": 0.32,
+		"sphereThickness": 0.023,
+		"cylinderThickness": 0.0475,
+		"length": 1.7,
+		"internalVolume": 660,
+		"mass":  530, 
+		"material": "6061 Aluminum",
+		"depth": 4000
+	    },
+	    {
+		"name": "PV2",
+		"shape": "SPHERE",
+		"internalRadius": 0.25,
+		"sphereThickness": 0.06,
+		"internalVolume": 65,
+		"mass": 150,
+		"material": "Glass",
+		"depth": 3000
+	    },
+	    {
+		"name": "PV3",
+		"shape": "SPHERE",
+		"internalRadius": 0.25,
+		"sphereThickness": 0.06,
+		"mass": 150,
+		"material": "Glass",
+		"depth": 4000
+	    },
+	    {
+		"name": "PV4",
+		"shape": "CYLINDER",
+		"internalRadius": 0.32,
+		"sphereThickness": 0.023,
+		"cylinderThickness": 0.0475,
+		"length": 1.7,
+		"mass":  530, 
+		"material": "6061 Aluminum",
+		"depth": 4000
+	    }	    
+	]
+    }
+}
